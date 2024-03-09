@@ -1,0 +1,5 @@
+- name: Print Message
+  host: frontend-dev.pdevops72.online
+  tasks:
+    ansible.builtin.debug:
+      msg: Learn ansible
