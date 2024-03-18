@@ -34,7 +34,7 @@
 
     - name: Unarchive a file
       ansible.builtin.unarchive:
-        src: /tmp/frontend.zip
+        src: /tmp/backend.zip
         dest: /app
         remote_src: yes
 
