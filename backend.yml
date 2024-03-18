@@ -1,8 +1,48 @@
-- name: Backend expense setup
+- name: mysql-server expense setup
   hosts: all
   become: yes
   tasks:
+    - name: Disable nodejs
+     ansible.builtin.shell: dnf module disable nodejs -y
+    - name: Enable nodejs
+       ansible.builtin.shell: dnf module enable nodejs:20 -y
+
     - name: Install nodejs
-      ansible.builtin.dnf:
-        name: nodejs
-        state: latest
+      ansible.builtin.dnf: dnf install nodejs -y
+
+    - name: Add Application user
+      ansible.builtin.user:
+       name: expense
+
+    - name: Load backend service
+      ansible.builtin.copy:
+       src: backend.service
+       dest: /etc/systemd/system/backend.service
+
+    - name: create a directory
+      ansible.builin.file:
+        path: /app
+        state: directory
+
+
+    - name: Download file from a file path
+      ansible.builtin.get_url:
+        url: https://expense-artifacts.s3.amazonaws.com/expense-backend-v2.zip
+        dest: /tmp/backend.zip
+
+    - name: Unarchive a file
+      ansible.builtin.unarchive:
+        src: /tmp/frontend.zip
+        dest: /app
+        remote_src: yes
+
+    - name: Install npm package
+      community.general.npm:
+         path: /app
+         state: latest
+
+    - name: Restart daemon service
+      ansible.builtin.systemd_service:
+            state: restarted
+            daemon_reload: true
+            name:  daemon-reload
