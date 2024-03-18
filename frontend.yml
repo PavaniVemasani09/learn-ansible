@@ -1,0 +1,6 @@
+- name: "Frontend expense setup"
+  hosts: all
+  tasks:
+    - name: "Install nginx"
+      ansible.builtin.dnf:
+        state: latest
