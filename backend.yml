@@ -40,7 +40,7 @@
 
     - name: Install npm package
       community.general.npm:
-         path: /app
+         path: /app/location
          state: installed
 
     - name: Restart daemon service
