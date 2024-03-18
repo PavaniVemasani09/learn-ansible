@@ -22,7 +22,7 @@
         dest: /etc/systemd/system/backend.service
 
     - name: create a directory
-      ansible.builin.file:
+      ansible.builtin.file:
         path: /app
         state: directory
 
