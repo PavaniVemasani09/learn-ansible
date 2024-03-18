@@ -11,5 +11,6 @@
       ansible.builtin.systemd_service:
         state: started
         name: mysqld
+
     - name: Root password
       ansible.builtin.shell: mysql_secure_installation --set-root-pass ExpenseApp@1
