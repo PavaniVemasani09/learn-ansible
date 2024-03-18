@@ -41,7 +41,7 @@
     - name: Install npm package
       community.general.npm:
          path: /app/location
-         state: installed
+         state: latest
 
     - name: Restart daemon service
       ansible.builtin.systemd_service:
