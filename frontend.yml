@@ -1,13 +1,12 @@
-- name: "Frontend expense setup"
+- name: Frontend expense setup
   hosts: all
   become: yes
   tasks:
-    - name: "Install nginx"
+    - name: Install nginx
       ansible.builtin.dnf:
         state: latest
 
-    - name: "Start nginx"
-      service:
-        name: "nginx"
-          state: started
-          enabled: yes
+    - name: Start nginx
+      ansible.builtin.systemd_service:
+        state: started
+        name: nginx
