@@ -3,9 +3,9 @@
   become: yes
   tasks:
     - name: Disable nodejs
-     ansible.builtin.shell: dnf module disable nodejs -y
+      ansible.builtin.shell: dnf module disable nodejs -y
     - name: Enable nodejs
-       ansible.builtin.shell: dnf module enable nodejs:20 -y
+      ansible.builtin.shell: dnf module enable nodejs:20 -y
 
     - name: Install nodejs
       ansible.builtin.dnf: dnf install nodejs -y
