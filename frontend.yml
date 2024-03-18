@@ -8,8 +8,9 @@
         state: latest
     - name: Start nginx
       ansible.builtin.systemd_service:
-        state: started
         name: nginx
+        state: started
+
     - name: Copy nginx configuration in expense file
       ansible.builtin.copy:
         src: expense.conf
