@@ -11,9 +11,25 @@
         src: expense.conf
         dest: /etc/nginx/default.d/expense.conf
 
-#    - name: Start nginx
-#      ansible.builtin.systemd_service:
-#        state: restarted
-#        name: nginx
+    - name: clean the code
+       ansible.builtin.file:
+        path: /usr/share/nginx/html
+        state: absent
+
+    - name: Download file from a file path
+      ansible.builtin.get_url:
+        url: https://expense-artifacts.s3.amazonaws.com/expense-frontend-v2.zip
+        dest: /tmp/frontend.zip
+
+    - name: Unarchive a file
+          ansible.builtin.unarchive:
+            src: /tmp/frontend.zip
+            dest: /usr/share/nginx/html
+            remote_src: yes
+
+    - name: Start nginx
+      ansible.builtin.systemd_service:
+        state: restarted
+        name: nginx
 
 
