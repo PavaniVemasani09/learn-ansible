@@ -47,6 +47,11 @@
       ansible.builtin.dnf:
          name: mysql
          state: latest
+    - name: Install Python pkgs
+      ansible.builtin.pip:
+         name:
+           - PyMySQL
+           - Cryptography
 
     - name: Load schema
       community.mysql.mysql_db:
