@@ -6,10 +6,10 @@
       ansible.builtin.dnf:
         state: latest
 
-    - name: Copy file from one directory to another
-      ansible.builtin.copy:
-        src: expense.conf
-        dest: /etc/nginx/default.d/expense.conf
+#    - name: Copy file from one directory to another
+#      ansible.builtin.copy:
+#        src: expense.conf
+#        dest: /etc/nginx/default.d/expense.conf
 
     - name: clean the code
       ansible.builtin.file:
