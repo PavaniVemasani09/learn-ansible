@@ -11,7 +11,12 @@
 - name: clean the code
   ansible.builtin.file:
     path: /usr/share/nginx/html
-    state: directory
+    state: absent
+
+- name: create App Directory
+  ansible.builtin.file:
+    path: /usr/share/nginx/html
+    state: Directory
 
 - name: Download file from a file path
   ansible.builtin.get_url:
