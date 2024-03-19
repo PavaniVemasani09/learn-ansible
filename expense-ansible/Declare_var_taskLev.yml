@@ -12,10 +12,11 @@
      ansible.builtin.debug:
        msg: messg_playlevel - {{ messg_playlevel }}
    - name: display variable at tasks level
-     vars:
-       page: page1
      ansible.builtin.debug:
        msg: page - {{ page }}
-   roles:
+     vars:
+        page: page1
+
+  roles:
      - demo
 
