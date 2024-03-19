@@ -1,7 +1,7 @@
 - name: Copy file with owner and permissions
-  host: all
+  host: localhost
   tasks:
     -name: copy expense file
      ansible.builtin.copy:
        src: expense.conf
-       dest: /tmp/expense.conf
+       dest: /tmp/expense-copy.conf
