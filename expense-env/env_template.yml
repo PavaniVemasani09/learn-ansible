@@ -1,4 +1,4 @@
-- name: Display environment var
+- name: Copy file with owner and permissions
   ansible.builtin.copy:
     src: expense.conf
     dest: /tmp/expense.conf
