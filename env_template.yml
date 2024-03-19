@@ -1,5 +1,5 @@
 - name: copy
-  host: localhost
+  hosts: localhost
   tasks:
    - name: copy expense file
      ansible.builtin.copy:
