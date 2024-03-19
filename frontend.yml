@@ -1,5 +1,5 @@
 - name: Frontend expense setup
-  hosts: all
+  hosts: frontend-dev.pdevops72.online
   become: yes
   roles:
    - frontend
