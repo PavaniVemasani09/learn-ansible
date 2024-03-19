@@ -5,7 +5,7 @@
    messg: Host Zones
   tasks:
     vars:
-      page: page1
+     page: page1
    - name: display playlevel
      ansible.builtin.debug:
        msg: url_playlevel - {{url_playlevel}}
