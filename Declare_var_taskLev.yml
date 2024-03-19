@@ -2,7 +2,7 @@
   hosts: localhost
   vars:
    url_playlevel: play.example.com
-   messg: Host Zones
+   messg_playlevel: Host Zones
   tasks:
 
    - name: display playlevel
