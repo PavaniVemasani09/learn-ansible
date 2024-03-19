@@ -12,10 +12,15 @@
   ansible.builtin.user:
     name: expense
 
+#- name: Load backend service
+#  ansible.builtin.copy:
+#    src: backend.service
+#    dest: /etc/systemd/system/backend.service
+
 - name: Load backend service
-  ansible.builtin.copy:
-    src: backend.service
-    dest: /etc/systemd/system/backend.service
+    ansible.builtin.template:
+      src: backend.service
+      dest: /etc/systemd/system/backend.service
 
 - name: Run tasks/other.yaml instead of 'main'
   ansible.builtin.import_role:
