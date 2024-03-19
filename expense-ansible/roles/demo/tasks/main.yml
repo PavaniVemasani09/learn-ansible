@@ -1,3 +1,6 @@
+- name: Display message
+  ansible.builtin.debug:
+    msg: Ansible
 - name: Task variable
   ansible.builtin.debug:
-    msg: url_role - {{ url_role }}
+    msg: URL_ROLE - {{ URL_ROLE }}
