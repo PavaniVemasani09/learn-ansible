@@ -1,5 +1,5 @@
 - name: Copy file with owner and permissions
-  host: localhost
+  host: all
   tasks:
     - name: copy expense file
       ansible.builtin.copy:
