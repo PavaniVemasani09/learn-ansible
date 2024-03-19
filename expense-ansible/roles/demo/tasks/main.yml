@@ -1,0 +1,3 @@
+- name: Task variable
+  ansible.builtin.debug:
+    msg: url_role - {{ url_role }}
