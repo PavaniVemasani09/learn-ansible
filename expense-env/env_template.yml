@@ -1,4 +1,4 @@
 - name: Display environment var
   ansible.builtin.copy:
-     src: expense.conf
-     dest: /tmp/expense.conf
+    src: expense.conf
+    dest: /tmp/expense.conf
