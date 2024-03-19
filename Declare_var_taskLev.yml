@@ -2,11 +2,17 @@
   hosts: localhost
   vars:
    url_playlevel: play.example.com
+   messg: Host Zones
   tasks:
+    vars:
+      page: page1
    - name: display playlevel
      ansible.builtin.debug:
        msg: url_playlevel - {{url_playlevel}}
    - name: display playlevel var
      ansible.builtin.debug:
-       msg: url_playlevel - {{url_playlevel}}
+       msg: messg_playlevel - {{ messg_playlevel }}
+   - name: display variable at tasks level
+     ansible.builtin.debug:
+       msg: page - {{ page }}
 
