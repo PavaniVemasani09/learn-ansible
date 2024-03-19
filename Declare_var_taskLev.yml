@@ -5,5 +5,5 @@
   tasks:
    - name: display playlevel
      ansible.builtin.debug:
-     msg: url_playlevel - {{url_playlevel}}
+       msg: url_playlevel - {{url_playlevel}}
 
