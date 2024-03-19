@@ -1,7 +1,7 @@
 - name: Frontend expense setup
   hosts: all
   become: yes
-  role:
+  roles:
    - frontend
 
 

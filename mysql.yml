@@ -1,6 +1,6 @@
 - name: mysql-server expense setup
   hosts: all
   become: yes
-  role:
+  roles:
    - mysql
 
