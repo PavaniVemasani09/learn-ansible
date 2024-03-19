@@ -1,5 +1,5 @@
 - name: Declare variable at play level
-  hosts: all
+  hosts: localhost
   vars:
    url_playlevel: play.example.com
   tasks:
