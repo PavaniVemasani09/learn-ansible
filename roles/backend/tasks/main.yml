@@ -25,7 +25,7 @@
 - name: Install npm package
   community.general.npm:
     name: npm
-    path: {{ app_dir }}
+    path: /app
 
 - name: Install mysql
   ansible.builtin.dnf:
