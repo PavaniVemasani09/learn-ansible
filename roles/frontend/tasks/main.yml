@@ -8,26 +8,30 @@
     src: expense.conf
     dest: /etc/nginx/default.d/expense.conf
 
-- name: clean the code
-  ansible.builtin.file:
-    path: /usr/share/nginx/html
-    state: absent
-
-- name: create App Directory
-  ansible.builtin.file:
-    path: /usr/share/nginx/html
-    state: Directory
-
-- name: Download file from a file path
-  ansible.builtin.get_url:
-    url: https://expense-artifacts.s3.amazonaws.com/expense-frontend-v2.zip
-    dest: /tmp/frontend.zip
-
-- name: Unarchive a file
-  ansible.builtin.unarchive:
-    src: /tmp/frontend.zip
-    dest: /usr/share/nginx/html
-    remote_src: yes
+- name: Run tasks/other.yaml instead of 'main'
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: pre_req_code
+#- name: clean the code
+#  ansible.builtin.file:
+#    path: /usr/share/nginx/html
+#    state: absent
+#
+#- name: create App Directory
+#  ansible.builtin.file:
+#    path: /usr/share/nginx/html
+#    state: Directory
+#
+#- name: Download file from a file path
+#  ansible.builtin.get_url:
+#    url: https://expense-artifacts.s3.amazonaws.com/expense-frontend-v2.zip
+#    dest: /tmp/frontend.zip
+#
+#- name: Unarchive a file
+#  ansible.builtin.unarchive:
+#    src: /tmp/frontend.zip
+#    dest: /usr/share/nginx/html
+#    remote_src: yes
 
 - name: Start Nginx
   ansible.builtin.systemd_service:
