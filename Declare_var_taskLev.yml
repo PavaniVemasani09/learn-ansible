@@ -6,4 +6,7 @@
    - name: display playlevel
      ansible.builtin.debug:
        msg: url_playlevel - {{url_playlevel}}
+   - name: display playlevel var
+     ansible.builtin.debug:
+       msg: url_playlevel - {{url_playlevel}}
 
