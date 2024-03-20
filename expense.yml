@@ -1,5 +1,5 @@
 - name: mysql-server expense setup
-  hosts: backend-dev.pdevops72.online
+  hosts: all
   become: yes
   roles:
-    - backend
+    - {{ role_name }}

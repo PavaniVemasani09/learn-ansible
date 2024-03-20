@@ -1,6 +1,0 @@
-- name: mysql-server expense setup
-  hosts: mysql-dev.pdevops72.online
-  become: yes
-  roles:
-   - mysql
-
