@@ -9,4 +9,3 @@
       ansible.builtin.debug:
         msg: "{{ OUTPUT.failed }}"
         when: OUTPUT.failed is false
-        ignore_errors: yes
