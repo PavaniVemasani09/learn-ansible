@@ -1,5 +1,5 @@
 - name: Encrypt the password
-  hosts: all
+  hosts: localhost
   vars:
     PASSWORD: !vault |
                         $ANSIBLE_VAULT;1.1;AES256
