@@ -7,4 +7,4 @@
 
     - name: display variable
       ansible.builtin.debug:
-        msg: "{{ OUTPUT }}"
+        msg: "{{ OUTPUT.failed }}"
