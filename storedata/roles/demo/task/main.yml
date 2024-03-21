@@ -1,12 +1,12 @@
-    - name: substitution of variable
-      ansible.builtin.shell: uptime
-      register: OUTPUT
+- name: substitution of variable
+  ansible.builtin.shell: uptime
+  register: OUTPUT
 
-    - name: display variable
-      ansible.builtin.debug:
-        msg: "{{ OUTPUT.failed }}"
+- name: display variable
+  ansible.builtin.debug:
+    msg: "{{ OUTPUT.failed }}"
 
-    - name: display env dynamically
-      ansible.builtin.debug:
-        msg: env - "{{ env }}"
+- name: display env dynamically
+  ansible.builtin.debug:
+    msg: env - "{{ env }}"
 
