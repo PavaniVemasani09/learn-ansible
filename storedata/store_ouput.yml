@@ -1,10 +1,10 @@
 - name: Store data into variable
   hosts: localhost
   tasks:
-    - name: substitution of variable
+   - name: substitution of variable
       ansible.builtin.shell: uptime
       required: OUTPUT
 
-    - name: Print the variable output
+   - name: Print the variable output
       ansible.builtin.debug:
         msg: "{{ OUTPUT }}"
