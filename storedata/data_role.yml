@@ -1,0 +1,4 @@
+- name: Store data into variable
+  hosts: localhost
+  roles:
+   - demo

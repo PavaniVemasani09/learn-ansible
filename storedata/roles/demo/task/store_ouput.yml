@@ -1,6 +1,3 @@
-- name: Store data into variable
-  hosts: localhost
-  tasks:
     - name: substitution of variable
       ansible.builtin.shell: uptime
       register: OUTPUT
