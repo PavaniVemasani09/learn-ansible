@@ -1,2 +1,2 @@
 env : dev
-msg : Hello
+URL_ROLE: example.com
