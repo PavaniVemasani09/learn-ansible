@@ -2,9 +2,9 @@
   hosts: localhost
   tasks:
    - name: substitution of variable
-      ansible.builtin.shell: uptime
-      required: OUTPUT
+     ansible.builtin.shell: uptime
+     required: OUTPUT
 
    - name: Print the variable output
-      ansible.builtin.debug:
-        msg: "{{ OUTPUT }}"
+     ansible.builtin.debug:
+       msg: "{{ OUTPUT }}"
