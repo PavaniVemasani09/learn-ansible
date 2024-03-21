@@ -11,5 +11,5 @@
 
     - name: display env dynamically
       ansible.builtin.debug:
-        msg: env - "{{ env }}"
+        msg: env - {{ env }}
 
