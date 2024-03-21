@@ -1,0 +1,6 @@
+- name: Store data into variable
+  hosts: localhost
+  tasks:
+    -name: substitution of variable
+     ansible.builin.shell: uptime
+     required: OUTPUT
