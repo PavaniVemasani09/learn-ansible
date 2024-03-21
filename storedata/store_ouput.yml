@@ -3,7 +3,7 @@
   tasks:
     -name: substitution of variable
      ansible.builin.shell: uptime
-     required: OUTPUT
+       required: OUTPUT
 
     - name: Print the variable output
       ansible.builtin.debug:
