@@ -2,7 +2,7 @@
   hosts: localhost
   tasks:
     - name: substitution of variable
-     ansible.builin.shell: uptime
+     ansible.builtin.shell: uptime
      required: OUTPUT
 
     - name: Print the variable output
