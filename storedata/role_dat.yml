@@ -7,11 +7,10 @@
 
     - name: display variable
       ansible.builtin.debug:
-      msg: "{{ OUTPUT.failed }}"
+        msg: "{{ OUTPUT.failed }}"
 
     - name: display env dynamically
       ansible.builtin.debug:
-      msg: env - "{{ env }}"
-
+        msg: env - "{{ env }}"
   roles:
    - demo
