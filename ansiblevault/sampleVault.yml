@@ -2,5 +2,5 @@
   hosts: all
   tasks:
     - name: get encrypt password
-     ansible.builtin.debug:
+      ansible.builtin.debug:
        msg: password s- {{ password }}
