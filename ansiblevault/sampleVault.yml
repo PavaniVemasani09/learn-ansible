@@ -1,0 +1,6 @@
+- name: encrypt password
+  hosts: all
+  tasks:
+    -name: get encrypt password
+     ansible.builtin.debug:
+       msg: password s- {{ password }}
