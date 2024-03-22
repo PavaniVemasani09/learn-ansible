@@ -3,4 +3,4 @@
   tasks:
     - name: get encrypt password
       ansible.builtin.debug:
-       msg: password s- {{ password }}
+        msg: password s- {{ password }}
