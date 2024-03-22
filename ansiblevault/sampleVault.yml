@@ -1,7 +1,7 @@
 - name: encrypt password
-  hosts: all
+  hosts: localhost
   vars:
-    password: !vault |
+    PASSWORD: !vault |
                         $ANSIBLE_VAULT;1.1;AES256
                         30386234313765353638643166326236333431643966373862666239323230393136656630356132
                         3931306661343163383539663330613766383934663062630a303164633735623264613735303239
@@ -12,4 +12,4 @@
   tasks:
     - name: get encrypt password
       ansible.builtin.debug:
-        msg: password s- {{ password }}
+        msg: password - {{ PASSWORD }}
