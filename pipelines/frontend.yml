@@ -30,7 +30,7 @@ pipelines:
                 command: bash
                 run_if: passed
 
-     - QA:
+    - QA:
             fetch_materials: true
             keep_artifacts: false
             clean_workspace: false
