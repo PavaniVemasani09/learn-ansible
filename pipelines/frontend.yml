@@ -49,7 +49,7 @@ pipelines:
                     run_if: passed
 
 
-     - Stage:
+    - Stage:
             fetch_materials: true
             keep_artifacts: false
             clean_workspace: false
