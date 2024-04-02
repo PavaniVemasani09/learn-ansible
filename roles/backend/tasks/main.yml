@@ -1,0 +1,78 @@
+- name: disable nodejs
+  ansible.builtin.shell: dnf module disable nodejs -y
+
+- name: enable nodejs
+  ansible.builtin.shell: dnf module enable nodejs:20 -y
+
+- name: Install nodejs
+  ansible.builtin.dnf:
+    name: nodejs
+    state: installed
+
+- name: Add application user
+  ansible.builtin.user:
+    name: expense
+  register: add_expense
+
+- name: display
+  ansible.builtin.debug:
+    msg: "{{ add_expense }}"
+
+- name: Copy backend service
+  ansible.builtin.copy:
+    src: roles/backend/file/backend.conf
+    dest: /etc/systemd/system/{{ component }}.service
+
+- name: Run common code
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: pre-req
+
+- name: Install npm dependencies
+  community.general.npm:
+    name: npm
+    path: npm install
+    state: latest
+
+- name: Load the service
+  ansible.builtin.systemd_service:
+    daemon_reload: true
+
+- name: Install mysql
+  ansible.builtin.dnf:
+    name: mysql
+    state: latest
+
+- name: Install PyMySQL package
+  ansible.builtin.pip:
+    name: PyMySQL
+    state: latest
+- name: Install cryptography package
+  ansible.builtin.pip:
+    name: cryptography
+    state: latest
+
+- name: Load Schema
+  mysql_db:
+    name: all
+    state: import
+    target: /app/schema/backend.sql
+    login_user: root
+    login_password: ExpenseApp@1
+    login_host: mysql-dev.pdevops72.online
+  register: schema_output
+
+- name: display schema output
+  ansible.builtin.debug:
+    msg: "{{ schema_output }}"
+
+- name: Enabled backend service
+  ansible.builtin.service:
+    name: backend
+    enabled: yes
+
+
+- name: Restart configuration service
+  ansible.builtin.service:
+    name: backend
+    state: restarted
