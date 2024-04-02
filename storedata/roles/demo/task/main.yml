@@ -1,3 +1,0 @@
-- name: Display role
-  ansible.builtin.debug:
-    msg: URL_ROLE - {{ URL_ROLE }}
